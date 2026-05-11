@@ -4,10 +4,10 @@ import bcrypt from 'bcrypt'
 import dotenv from 'dotenv'
 
 dotenv.config()
-
+ 
 export const getAllUsers= (req,res)=>{
     const sql="SELECT * FROM users";
-
+ 
     db.query(sql,(err,users)=>{
         if(err) return res.status(500).json({Error: `error : ${err.message}`});
         res.status(200).json({users})
